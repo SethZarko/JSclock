@@ -17,12 +17,8 @@ app.use(cors());
 app.use(morgan('combined'));
 
 app.use((req, res, next) => {
-   res.setHeader("X-Frame-Options", "ALLOW-FROM https://sethsellslondon.com");
-   next();
-}); 
-
-app.use((req, res, next) => {
-   res.setHeader("Content-Security-Policy", "frame-ancestors 'self' https://sethsellslondon.com https://www.sethsellslondon.com");
+   res.setHeader("Content-Security-Policy", "frame-ancestors *");
+   res.setHeader("X-Frame-Options", "ALLOWALL");
    next();
 });
 

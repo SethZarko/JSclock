@@ -15,7 +15,14 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 
 // Security
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            frameAncestors: ["'self'", "https://sethsellslondon.com"],
+        },
+    },
+}));
 
 // Set Content Security Policy (CSP)
 app.use((req, res, next) => {

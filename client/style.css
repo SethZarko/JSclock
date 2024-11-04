@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url('./background.jpg');
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.sorry {
+    display: none;
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: solid 3px white;
+    padding: 1rem;
+}
+
+.digital-clock {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    width: 100%;
+    height: 100px;
+    border: solid 1px white;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.digital-clock-display-container {
+    display: flex;
+}
+
+.digi-time {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 200;
+    font-size: 4rem;
+    color: white;
+}
+
+.clock-sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    align-self: flex-start;
+}
+
+.clock {
+    border: solid 5px white;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto;
+    position: relative;
+    transform: translateX(20px);
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    border: solid 1px white;
+    padding: 0.1rem;
+    width: 135px;
+    height: 30px;
+    color: white;
+}
+
+.date {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+}
+
+span {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    border: solid 2px rgba(218, 218, 218, 0.557);
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+
+.sec {
+    color:rgba(219, 219, 219, 0.511) !important;
+    font-size: 1rem;
+    align-self: flex-start;
+}
+
+.am-pm-container {
+    margin-left: auto;
+}
+
+@media (max-width: 619px) {
+    .clock-container {
+        display: none;
+    }
+
+    .sorry {
+        display: block;
+        color: white;
+        font-size: 1.25rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}

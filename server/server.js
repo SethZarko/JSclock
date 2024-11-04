@@ -17,6 +17,12 @@ app.use(cors());
 // Security
 app.use(helmet());
 
+// Set Content Security Policy (CSP)
+app.use((req, res, next) => {
+   res.setHeader("Content-Security-Policy", "frame-ancestors 'self' https://sethsellslondon.com");
+   next();
+});
+
 // Logging
 app.use(morgan('combined'));
 

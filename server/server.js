@@ -17,14 +17,14 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // Serve static files with cache settings
-app.use(express.static(path.join(__dirname, '../client'), {
+app.use(express.static(path.join(__dirname, 'public'), {
    maxAge: '1d',
    etag: false,
 }));
 
 // Home route
 app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname, '../client', 'index.html'));
+   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // 404 handling
@@ -35,7 +35,7 @@ app.use((req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
    console.error(err.stack);
-   res.status(500).send('Something broke!');
+   res.status(500).send('Error - 500');
 });
 
 // Start server

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: jsclock-express-server
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    headers:
+      - source: "/(.*)"
+        headers:
+          Content-Security-Policy: "frame-ancestors 'self' https://sethsellslondon.com"

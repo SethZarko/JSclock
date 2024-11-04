@@ -3,7 +3,6 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import helmet from 'helmet';
 import morgan from 'morgan';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,16 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors());
-
-// Security
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            frameAncestors: ["'self'", "https://sethsellslondon.com"],
-        },
-    },
-}));
 
 // Set Content Security Policy (CSP)
 app.use((req, res, next) => {
